@@ -13,10 +13,11 @@ import Model.RectangleFormat;
 
 import javax.swing.*;
 
-public class MancalaGame 
+public class MancalaGame extends JFrame
 {
 	private MancalaModel model;
 	private GameBoard board;
+	private CenterPanel cPanel;
 	
 	public static void main(String [] args)
 	{
@@ -41,9 +42,18 @@ public class MancalaGame
 		{
 			board.dispose();
 		}
-		String initPits = JOptionPane.showInputDialog("Enter the number of stones initially in the pits: ", "3");
-		model = new MancalaModel(Integer.parseInt(initPits));
-		int opt = JOptionPane.showOptionDialog(null, "Choose a board style:", "Board Style", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Rectangle", "Elliptical" }, 0);
+
+		cPanel = new CenterPanel();
+		add(cPanel);
+
+		String initPits = JOptionPane.showInputDialog("Welcome to Mancala Group 4: Please Enter your Name", "Player 1");
+		// model = new MancalaModel(Integer.parseInt(initPits));
+		// int opt = JOptionPane.showOptionDialog(null, "Board Style is by Default Rectangular:", "Board Style", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Rectangle", "Elliptical" }, 0);
+
+		//int opt = JOptionPane.showOptionDialog(null, "Board Style is by Default Rectangular:", "Board Style", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Rectangle" }, 0);
+
+		int opt = 0;
+
 		switch (opt)
 		{
 		case 0:

@@ -25,11 +25,5 @@ public class Controller {
         view = v;
 
 
-
-
     }
-
-
-
-
 }

@@ -92,9 +92,12 @@ public class MancalaModel {
      *
      * @param c the listener
      */
+
+
     public void attach(ChangeListener c) {
         listeners.add(c);
     }
+
 
     /**
      * Get method for undo status.

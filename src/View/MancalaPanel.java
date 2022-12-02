@@ -20,7 +20,8 @@ public class MancalaPanel extends JPanel implements ChangeListener
    private char playerMancala;   
    private MancalaModel mancalaModel;
    private BoardFormatter format;
-  
+
+
    /**
     * Constructor.
     * @param mancalaModel model this panel is tied to
@@ -31,7 +32,9 @@ public class MancalaPanel extends JPanel implements ChangeListener
       this.mancalaModel = mancalaModel;
       this.playerMancala = playerMancala;
       
-      stoneAmount = mancalaModel.getMancalaValue(playerMancala);
+      //stoneAmount = mancalaModel.getMancalaValue(playerMancala);
+      stoneAmount = 4;
+
    }
 
    /**

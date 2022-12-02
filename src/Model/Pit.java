@@ -15,7 +15,7 @@ package Model;
 
        /**
         * Constructor.
-        * @param initialAmount initial stone count in pit
+        * @param initialAmount initial stone count in pit is always 4
         */
        public Pit(int initialAmount)
        {
