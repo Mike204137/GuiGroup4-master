@@ -15,8 +15,6 @@ public class InitialPanel extends JPanel {
         setLayout(new BorderLayout());
         cp = new CenterPanel();
         add(cp, "Center");
-
-
     }
 
     // Get methods - one get method for each instance variable defined above
