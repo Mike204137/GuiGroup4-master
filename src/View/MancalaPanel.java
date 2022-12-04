@@ -32,7 +32,7 @@ public class MancalaPanel extends JPanel implements ChangeListener
       this.mancalaModel = mancalaModel;
       this.playerMancala = playerMancala;
       
-      //stoneAmount = mancalaModel.getMancalaValue(playerMancala);
+      stoneAmount = mancalaModel.getMancalaValue(playerMancala);
       stoneAmount = 4;
 
    }

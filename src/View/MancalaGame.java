@@ -25,13 +25,19 @@ public class MancalaGame extends JFrame
 	}
 	
 	/**
-	 * Constructor for MancalaGame.
+	 * Constructor for View.MancalaGame.
 	 */
 	public MancalaGame()
 	{
 		initGame();
 	}
-	
+
+
+
+
+
+
+
 	/**
 	 * Initializes the game by creating the model and views and attaching
 	 * them.
@@ -43,13 +49,27 @@ public class MancalaGame extends JFrame
 			board.dispose();
 		}
 
+		InitialPanel ip;
 		cPanel = new CenterPanel();
 		add(cPanel);
 
-		String initPits = JOptionPane.showInputDialog("Welcome to Mancala Group 4: Please Enter of stones", "3");
-		 model = new MancalaModel(Integer.parseInt(initPits));
+		// initialize default values
+		//super("Gui Group 4 Mancala Project");
+		// create our panel and add it to the frame
+		ip = new InitialPanel();
+		add(ip);
+		// finalize settings for frame
+		setSize(1000, 600);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
+
+		String initPits = JOptionPane.showInputDialog("Welcome to Mancala Group 4: Please Enter 4 Stones", "4");
+		model = new MancalaModel(Integer.parseInt(initPits));
 		int opt = JOptionPane.showOptionDialog(null, "Board Style is by Default Rectangular:", "Board Style", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Rectangle", "Elliptical" }, 0);
 
+		//int opt = JOptionPane.showOptionDialog(null, "Board Style is by Default Rectangular:", "Board Style", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Rectangle" }, 0);
+
+		// int opt = 0;
 
 		switch (opt)
 		{
