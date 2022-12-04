@@ -41,11 +41,11 @@ public class GameBoard extends JFrame implements ChangeListener
 	   this.mancalaModel = mancalaModel;
 	   
 	   // Add this board to model's view list
-	   //mancalaModel.attach(this);
+	   mancalaModel.attach(this);
 	   
 	   // Top status bar
 	   TopPanel top = new TopPanel(game, mancalaModel);
-	   //mancalaModel.attach(top);
+	   mancalaModel.attach(top);
      
       //Initializing PitPanels and MancalaPanels and attaching it to the model
        // Switch MancalaA and B to change starting sides on the board
