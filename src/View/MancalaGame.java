@@ -46,13 +46,10 @@ public class MancalaGame extends JFrame
 		cPanel = new CenterPanel();
 		add(cPanel);
 
-		String initPits = JOptionPane.showInputDialog("Welcome to Mancala Group 4: Please Enter your Name", "Player 1");
-		// model = new MancalaModel(Integer.parseInt(initPits));
-		// int opt = JOptionPane.showOptionDialog(null, "Board Style is by Default Rectangular:", "Board Style", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Rectangle", "Elliptical" }, 0);
+		String initPits = JOptionPane.showInputDialog("Welcome to Mancala Group 4: Please Enter of stones", "3");
+		 model = new MancalaModel(Integer.parseInt(initPits));
+		int opt = JOptionPane.showOptionDialog(null, "Board Style is by Default Rectangular:", "Board Style", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Rectangle", "Elliptical" }, 0);
 
-		//int opt = JOptionPane.showOptionDialog(null, "Board Style is by Default Rectangular:", "Board Style", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Rectangle" }, 0);
-
-		int opt = 0;
 
 		switch (opt)
 		{
