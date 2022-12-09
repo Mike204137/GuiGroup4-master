@@ -116,6 +116,6 @@ public class RectangleFormat implements BoardFormatter
     */
    public Color getFillColor()
    {
-	   return Color.ORANGE;
+	   return Color.GREEN;
    }
 }

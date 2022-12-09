@@ -33,11 +33,6 @@ public class MancalaGame extends JFrame
 	}
 
 
-
-
-
-
-
 	/**
 	 * Initializes the game by creating the model and views and attaching
 	 * them.
