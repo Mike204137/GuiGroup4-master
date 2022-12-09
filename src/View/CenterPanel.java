@@ -23,6 +23,14 @@ public class CenterPanel extends JPanel {
 
         Image i = t.getImage("Images/mancalaspashpage.png");
         g.drawImage(i, 10, 10, this);
+
+
+            Toolkit m = Toolkit.getDefaultToolkit();
+
+            Image w = m.getImage("Images/Nittany-Lion-No.-1@4x.png");
+            //g.drawImage(w, 10, 10, this);
+            g.drawImage(w, 400, 100, 130, 260, this);
+
     }
 
     // Constructors

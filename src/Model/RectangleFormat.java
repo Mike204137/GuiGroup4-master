@@ -4,6 +4,7 @@ import View.GameBoard;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.ImageObserver;
 import java.util.ArrayList;
 
 /**
@@ -25,7 +26,17 @@ public class RectangleFormat implements BoardFormatter
    {
       return new Rectangle2D.Double(25, 0, GameBoard.MANCALA_WIDTH,
     		  GameBoard.MANCALA_HEIGHT);
+
+
    }
+
+	public void paint(Graphics g) {
+		Toolkit m = Toolkit.getDefaultToolkit();
+
+		Image w = m.getImage("Images/Nittany-Lion-No.-1@4x.png");
+		//g.drawImage(w, 10, 10, this);
+		g.drawImage(w, 400, 100, 130, 260, (ImageObserver) this);
+	}
 
    /**
     * Get this style's pit shape.
