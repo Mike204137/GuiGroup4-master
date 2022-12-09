@@ -21,17 +21,38 @@ public class CenterPanel extends JPanel {
     public void paint(Graphics g) {
         Toolkit t = Toolkit.getDefaultToolkit();
 
-        Image i = t.getImage("Images/mancalasplashpage.png");
+        Image i = t.getImage("Images/mancalaspashpage.png");
         g.drawImage(i, 10, 10, this);
-
     }
 
     // Constructors
-    public CenterPanel() {
+
+    private BufferedImage image;
+
+
+    public CenterPanel()  {
         // initialize default values
+            try {
+                image = ImageIO.read(new File("Images/mancalaspashpage.png"));
 
 
-        setBackground(Color.LIGHT_GRAY);
+                //Image i = t.getImage("Images/mancalaspashpage.png");
+
+            } catch (IOException ex) {
+                // handle exception...
+            }
+        }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
+    }
+
+}
+
+
+        //setBackground(Color.LIGHT_GRAY);
 
         /*
         BufferedImage img = null;
@@ -43,11 +64,11 @@ public class CenterPanel extends JPanel {
         }
         */
 
-    }
+    //}
 
 
 
-}
+//}
 
 
 /*
