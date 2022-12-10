@@ -1,5 +1,6 @@
+package Model;
 /**
- * File name: SimpleAudioPlayer.java
+ * File name: Model.SimpleAudioPlayer.java
  * Short description:
  * IST 242 Assignment:
  *
@@ -11,8 +12,6 @@ import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
-import static jdk.jfr.internal.consumer.EventLog.stop;
 
 
 public class SimpleAudioPlayer
@@ -46,7 +45,7 @@ public class SimpleAudioPlayer
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
-    public static void main(String[] args)
+    //public static void main(String[] args)
     {
         try
         {
@@ -205,4 +204,35 @@ public class SimpleAudioPlayer
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
+    public Clip getClip() {
+        return clip;
+    }
+
+    public void setClip(Clip clip) {
+        this.clip = clip;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public AudioInputStream getAudioInputStream() {
+        return audioInputStream;
+    }
+
+    public void setAudioInputStream(AudioInputStream audioInputStream) {
+        this.audioInputStream = audioInputStream;
+    }
+
+    public static String getFilePath() {
+        return filePath;
+    }
+
+    public static void setFilePath(String filePath) {
+        SimpleAudioPlayer.filePath = filePath;
+    }
 }

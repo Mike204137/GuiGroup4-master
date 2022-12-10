@@ -118,7 +118,7 @@ public class RectangleFormat implements BoardFormatter
     */
    public Color getColor()
    {
-      return Color.RED;
+      return Color.BLACK;
    }
    
    /**
@@ -127,6 +127,6 @@ public class RectangleFormat implements BoardFormatter
     */
    public Color getFillColor()
    {
-	   return Color.GREEN;
+	   return Color.BLUE;
    }
 }

@@ -1,21 +1,18 @@
 
 package View;
 
-import javax.imageio.ImageIO;
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImagingOpException;
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class CenterPanel extends JPanel {
 
-    // Instance Variables -- define your private data
+        // Instance Variables -- define your private data
 
 
     public void paint(Graphics g) {
@@ -25,108 +22,67 @@ public class CenterPanel extends JPanel {
         g.drawImage(i, 10, 10, this);
 
 
-            Toolkit m = Toolkit.getDefaultToolkit();
+        Toolkit m = Toolkit.getDefaultToolkit();
 
-            Image w = m.getImage("Images/Nittany-Lion-No.-1@4x.png");
-            //g.drawImage(w, 10, 10, this);
-            g.drawImage(w, 400, 100, 130, 260, this);
+        Image w = m.getImage("Images/Nittany-Lion-No.-1@4x.png");
+        //g.drawImage(w, 10, 10, this);
+        g.drawImage(w, 400, 100, 130, 260, this);
 
     }
 
-    // Constructors
+    //SimpleAudioPlayer clip;
 
-    private BufferedImage image;
+    // Method to play the audio
+    //public void play(String status) {
+        //start the clip
+        //Clip clip;
 
-
-    public CenterPanel()  {
-        // initialize default values
-            try {
-                image = ImageIO.read(new File("Images/mancalaspashpage.png"));
-
-
-                //Image i = t.getImage("Images/mancalaspashpage.png");
-
-            } catch (IOException ex) {
-                // handle exception...
-            }
-        }
-
-    @Override
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
-    }
-
-}
-
-
-        //setBackground(Color.LIGHT_GRAY);
-
-        /*
-        BufferedImage img = null;
-        try {
-            img = ImageID.read(new File("mancalasplashpage.png"));
-        } catch (IOException)
-        static BufferedImage read(File "Images/mancalasplashpage.png") throws IOException;
-        static BufferedImage read(
-        }
-        */
-
-    //}
+        //clip = new Clip("Audio/Majestic-Middle-Eastern-Desert-splash16.wav");
 
 
 
-//}
+        //status = "play";
 
+        //AudioFormat format = audioStream.getFormat();
+        //DataLine.Info info = new DataLine.Info(Clip.class, format);
+        //this.clip = (Clip) AudioSystem.getLine(info);
 
 /*
-public class CenterPanel extends Component {
 
-    BufferedImage img;
+    public class PlayAudio {
 
-    public void paint(Graphics g) {
-        g.drawImage(img, 0, 0, null);
-    }
+    //public static void main(String[] args) {
 
-    public CenterPanel() {
+            // specify the path to the audio file
+        AudioInputStream audioInputStream;
+        Clip clip;
+        static String filePath;
+        filePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
+
         try {
-            img = ImageIO.read(new File("Images/mancalasplashpage.png"));
-        } catch (IOException e) {
-        }
+           // create an AudioInputStream object
+           //AudioInputStream audioStream = AudioSystem.getAudioInputStream(new File(filePath));
+            File audioFile = new File(filePath);
+            //AudioInputStream audioStream = (AudioInputStream) AudioSystem.getClip(audioFile);
+            // create clip reference
 
-    }
+            audioInputStream = AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
 
-    public Dimension getPreferredSize() {
-        if (img == null) {
-            return new Dimension(100,100);
-        } else {
-            return new Dimension(img.getWidth(null), img.getHeight(null));
-        }
-    }
+            // create a Clip object
+           clip = AudioSystem.getClip();
 
-    //public static void main(String[] args)
+        // open audioInputStream to the clip
+        clip.open(audioInputStream);
 
-    {
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
 
-        JFrame f = new JFrame("Load Image Sample");
-
-        f.addWindowListener(new WindowAdapter(){
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
+        } catch (Exception e) {
+            System.out.println("Error with playing sound.");
+            e.printStackTrace();
             }
-        });
-
-        f.add(new CenterPanel());
-        f.pack();
-        f.setVisible(true);
-    }
-
-    public BufferedImage getImg() {
-        return img;
-    }
+        }
+    } */
 }
-*/
-
 
 
 
