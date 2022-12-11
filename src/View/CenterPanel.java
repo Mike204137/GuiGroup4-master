@@ -1,25 +1,30 @@
 
 package View;
 
+import org.w3c.dom.ls.LSOutput;
+
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-public class CenterPanel extends JPanel {
+public class CenterPanel extends JPanel implements ActionListener {
 
-        // Instance Variables -- define your private data
-
+    // Instance Variables -- define your private data
+    JButton b1;
+    JLabel message;
 
     public void paint(Graphics g) {
         Toolkit t = Toolkit.getDefaultToolkit();
 
         Image i = t.getImage("Images/mancalaspashpage.png");
-        g.drawImage(i, 10, 10, this);
+        g.drawImage(i, 0, 0, this);
 
 
         Toolkit m = Toolkit.getDefaultToolkit();
@@ -30,25 +35,47 @@ public class CenterPanel extends JPanel {
 
     }
 
+
+    public CenterPanel() {
+        b1 = new JButton("Play Music");
+        b1.addActionListener(this);
+        add(b1);
+        //System.out.println("Mancala Button");
+        message = new JLabel("Mancala Game Music");
+        add(message);
+    }
+
+    public void actionPerformed(ActionEvent event) {
+        System.out.println("Mancala");
+        Object obj = event.getSource();
+        if (event.getSource() == b1) {
+            message.setText("-" + b1.getText() + "- was clicked");
+        }
+        System.out.println("Mancla1");
+
+    }
+
+    /*
     //SimpleAudioPlayer clip;
 
     // Method to play the audio
-    //public void play(String status) {
-        //start the clip
-        //Clip clip;
+    public void play(String status) {
+        start the clip
+        Clip clip;
 
-        //clip = new Clip("Audio/Majestic-Middle-Eastern-Desert-splash16.wav");
+        clip = new Clip("Audio/Majestic-Middle-Eastern-Desert-splash16.wav");
 
 
+        status = "play";
 
-        //status = "play";
+        AudioFormat format = audioStream.getFormat();
+        DataLine.Info info = new DataLine.Info(Clip.class, format);
+        this.clip = (Clip) AudioSystem.getLine(info);
+    }
+    */
 
-        //AudioFormat format = audioStream.getFormat();
-        //DataLine.Info info = new DataLine.Info(Clip.class, format);
-        //this.clip = (Clip) AudioSystem.getLine(info);
-
+}
 /*
-
     public class PlayAudio {
 
     //public static void main(String[] args) {
@@ -81,8 +108,10 @@ public class CenterPanel extends JPanel {
             e.printStackTrace();
             }
         }
-    } */
+    }
 }
+*/
+
 
 
 
