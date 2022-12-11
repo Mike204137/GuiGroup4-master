@@ -1,6 +1,7 @@
 
 package View;
 
+import Model.AudioPlayerExample1;
 import org.w3c.dom.ls.LSOutput;
 
 import javax.sound.sampled.*;
@@ -14,11 +15,76 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-public class CenterPanel extends JPanel implements ActionListener {
+public class CenterPanel extends JPanel implements LineListener, ActionListener {
 
     // Instance Variables -- define your private data
     JButton b1;
     JLabel message;
+
+    boolean playCompleted;
+
+    void play(String audioFilePath) {
+        File audioFile = new File("Audio/Majestic-Middle-Eastern-Desert-splash16.wav");
+
+        try {
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+            System.out.println("ManclaTest123");
+
+            AudioFormat format = audioStream.getFormat();
+
+            DataLine.Info info = new DataLine.Info(Clip.class, format);
+
+            Clip audioClip = (Clip) AudioSystem.getLine(info);
+
+            audioClip.addLineListener((LineListener) this);
+
+            audioClip.open(audioStream);
+            audioClip.start();
+
+            while (!playCompleted) {
+                // wait for the playback completes
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+            audioClip.close();
+
+        } catch (UnsupportedAudioFileException ex) {
+            System.out.println("The specified audio file is not supported.");
+            ex.printStackTrace();
+        } catch (LineUnavailableException ex) {
+            System.out.println("Audio line for playing back is unavailable.");
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            System.out.println("Error playing the audio file.");
+            ex.printStackTrace();
+        }
+
+    }
+
+    //@Override
+    public void update(LineEvent event) {
+        LineEvent.Type type = event.getType();
+        System.out.println("Michael is awesome");
+        if (type == LineEvent.Type.START) {
+            System.out.println("Playback started.");
+
+        } else if (type == LineEvent.Type.STOP) {
+            playCompleted = true;
+            System.out.println("Playback completed.");
+        }
+
+    }
+
+    //public static void main(String[] args)
+    {
+       //String audioFilePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
+        //Model.AudioPlayerExample1 player = new Model.AudioPlayerExample1();
+        //player.play(audioFilePath);
+    }
 
     public void paint(Graphics g) {
         Toolkit t = Toolkit.getDefaultToolkit();
@@ -50,10 +116,12 @@ public class CenterPanel extends JPanel implements ActionListener {
         Object obj = event.getSource();
         if (event.getSource() == b1) {
             message.setText("-" + b1.getText() + "- was clicked");
+            //clip.start();
         }
         System.out.println("Mancla1");
 
     }
+
 
     /*
     //SimpleAudioPlayer clip;
