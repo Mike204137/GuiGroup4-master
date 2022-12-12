@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="JavaMancalaApp">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/JavaMancalaApp.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>
