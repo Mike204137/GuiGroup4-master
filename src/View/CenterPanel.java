@@ -77,7 +77,7 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
 
     }
 
-    public static void main(String[] args)
+    //public static void main(String[] args)
     {
        String audioFilePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
         Model.Music player = new Model.Music();
