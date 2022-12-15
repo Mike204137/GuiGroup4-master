@@ -1,9 +1,6 @@
 
 package View;
 
-import Model.AudioPlayerExample1;
-import org.w3c.dom.ls.LSOutput;
-
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
@@ -81,9 +78,9 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
 
     //public static void main(String[] args)
     {
-       //String audioFilePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
-        //Model.AudioPlayerExample1 player = new Model.AudioPlayerExample1();
-        //player.play(audioFilePath);
+       String audioFilePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
+        Model.Music player = new Model.Music();
+        player.play(audioFilePath);
     }
 
     public void paint(Graphics g) {
@@ -106,10 +103,9 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
         b1 = new JButton("Play Music");
         b1.addActionListener(this);
         add(b1);
-        //System.out.println("Mancala Button");
+        System.out.println("Mancala Button");
         message = new JLabel("Mancala Game Music");
-        add(message);
-    }
+        add(message);}
 
     public void actionPerformed(ActionEvent event) {
         System.out.println("Mancala");
@@ -117,8 +113,9 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
         if (event.getSource() == b1) {
             message.setText("-" + b1.getText() + "- was clicked");
             //clip.start();
+            play("Audio/Majestic-Middle-Eastern-Desert-splash16.wav");
         }
-        System.out.println("Mancla1");
+        System.out.println("ManclaTest123");
 
     }
 
@@ -144,9 +141,7 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
 
 }
 /*
-    public class PlayAudio {
 
-    //public static void main(String[] args) {
 
             // specify the path to the audio file
         AudioInputStream audioInputStream;

@@ -16,21 +16,32 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 /**
  * This is an example program that demonstrates how to play back an audio file
  * using the Clip in Java Sound API.
- * @author www.codejava.net
- *
+ * @author www.codejava.net modified by Peter Bachman to work with the Mancla project
  */
-public class AudioPlayerExample1 implements LineListener {
-	
+
+public class Music implements LineListener {
+
+
 	/**
 	 * this flag indicates whether the playback completes or not.
 	 */
 	boolean playCompleted;
-	
+
+	/**
+	 * Play a given audio file in the background. Export this from the music class to the center panel
+	 */
+	/*
+		public static void play() {
+		play("Audio/Majestic-Middle-Eastern-Desert-splash16.wav");
+		}
+		*/
+
 	/**
 	 * Play a given audio file.
+	 *
 	 * @param audioFilePath Path of the audio file.
 	 */
-	void play(String audioFilePath) {
+	public static void play(String audioFilePath) {
 		File audioFile = new File("Audio/Majestic-Middle-Eastern-Desert-splash16.wav");
 
 		try {
@@ -42,12 +53,13 @@ public class AudioPlayerExample1 implements LineListener {
 
 			Clip audioClip = (Clip) AudioSystem.getLine(info);
 
-			audioClip.addLineListener(this);
+			//audioClip.addLineListener(this);
+			audioClip.
 
 			audioClip.open(audioStream);
 			//System.out.println("Mancala123");
 			audioClip.start();
-			
+
 			while (!playCompleted) {
 				// wait for the playback completes
 				try {
@@ -56,9 +68,9 @@ public class AudioPlayerExample1 implements LineListener {
 					ex.printStackTrace();
 				}
 			}
-			
+
 			audioClip.close();
-			
+
 		} catch (UnsupportedAudioFileException ex) {
 			System.out.println("The specified audio file is not supported.");
 			ex.printStackTrace();
@@ -69,30 +81,42 @@ public class AudioPlayerExample1 implements LineListener {
 			System.out.println("Error playing the audio file.");
 			ex.printStackTrace();
 		}
-		
+
 	}
-	
+
+	public static void play() {
+	}
+
+	public boolean isPlayCompleted() {
+		return playCompleted;
+	}
+
+	public void setPlayCompleted(boolean playCompleted) {
+		this.playCompleted = playCompleted;
+	}
+
 	/**
 	 * Listens to the START and STOP events of the audio line.
 	 */
 	@Override
 	public void update(LineEvent event) {
 		LineEvent.Type type = event.getType();
-		
+
 		if (type == LineEvent.Type.START) {
 			System.out.println("Playback started.");
-			
+
 		} else if (type == LineEvent.Type.STOP) {
 			playCompleted = true;
 			System.out.println("Playback completed.");
 		}
 
 	}
-
-	public static void main(String[] args) {
-		String audioFilePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
-		AudioPlayerExample1 player = new AudioPlayerExample1();
-		player.play(audioFilePath);
-	}
-
 }
+
+	//public static void main(String[] args) {
+		//String audioFilePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
+		//Music player = new Music();
+		//player.play(audioFilePath);
+	//}
+
+//}

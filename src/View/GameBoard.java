@@ -1,7 +1,8 @@
 package View;
 
-import Model.MancalaModel;
 import Model.BoardFormatter;
+import Model.MancalaModel;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -9,7 +10,7 @@ import java.awt.*;
 
 /**
    COPYRIGHT (C). All Rights Reserved.
-   @author Jonathan Sagabaen
+   @author Jonathan Sagabaen original, Gui Group 4 modified
    @version 1.00
 
    Main Game Board frame.
@@ -31,7 +32,7 @@ public class GameBoard extends JFrame implements ChangeListener
    /**
     * Constructor for GameBoard class.
     * @param game the game this board is attached to
-    * @param mancalaModel the model this board is attached to
+    * @param mancalaModel the mancalaModel this board is attached to
     * @param format the format to use for this board
     */
    public GameBoard(MancalaGame game, MancalaModel mancalaModel,
@@ -40,14 +41,14 @@ public class GameBoard extends JFrame implements ChangeListener
 	   this.game = game;
 	   this.mancalaModel = mancalaModel;
 	   
-	   // Add this board to model's view list
+	   // Add this board to mancalaModel's view list
 	   mancalaModel.attach(this);
 	   
 	   // Top status bar
 	   TopPanel top = new TopPanel(game, mancalaModel);
 	   mancalaModel.attach(top);
      
-      //Initializing PitPanels and MancalaPanels and attaching it to the model
+      //Initializing PitPanels and MancalaPanels and attaching it to the mancalaModel
        // Switch MancalaA and B to change starting sides on the board
        MancalaPanel mancalaA = new MancalaPanel(mancalaModel, 'a');
        mancalaA.setFormat(format);
@@ -100,8 +101,12 @@ public class GameBoard extends JFrame implements ChangeListener
 	   setResizable(false);
 	   setVisible(true);	   
    }
-   
-   /**
+
+    public GameBoard() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
     * Controller that causes a repaint and checks to see if there is a winner.
     */
    public void stateChanged(ChangeEvent e) 

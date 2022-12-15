@@ -1,15 +1,15 @@
 package Model;
 
-import Model.Pit;
-
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.util.ArrayList;
 
 /**
 	COPYRIGHT (C). All Rights Reserved.
-	@author Jonathan Sagabaen
-	@version 1.00
+	@author Jonathan Sagabaen modified by Gui Group 4
+ //to do, this logic needs to be checked and updated if necessary to reflect legal moves and captures
+
+	@version 1.01
 	
 	Class representing a mancala game model.
 */
@@ -363,5 +363,8 @@ public class MancalaModel {
         undoPlayer = currentPlayer;
         if (undoCount > 0)
             undoActive = true;
+    }
+
+    public void music() {
     }
 }

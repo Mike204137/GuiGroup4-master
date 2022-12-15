@@ -1,7 +1,8 @@
 package View;
 
-import Model.MancalaModel;
 import Model.BoardFormatter;
+import Model.MancalaModel;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -27,7 +28,7 @@ public class PitPanel extends JPanel implements ChangeListener, MouseListener
   
    /**
     * Constructor.
-    * @param mancalaModel model this panel is attached to
+    * @param mancalaModel mancalaModel this panel is attached to
     * @param pitSide side this pit is on
     * @param pitNumber number of pit
     */
@@ -65,7 +66,7 @@ public class PitPanel extends JPanel implements ChangeListener, MouseListener
    }
    
    /**
-    * Update panel based on model state change.
+    * Update panel based on mancalaModel state change.
     */
    public void stateChanged(ChangeEvent e)
    {

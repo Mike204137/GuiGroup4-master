@@ -11,7 +11,7 @@ import java.awt.event.MouseEvent;
 
 /**
 	COPYRIGHT (C). All Rights Reserved.
-	@author Jonathan Sagabaen
+	@author Jonathan Sagabaen original, Gui Group 4 modified
 	@version 1.00
 	
 	Class representing the top display panel.
@@ -22,28 +22,36 @@ public class TopPanel extends JPanel implements ChangeListener
 	private JTextField statusText;
 	private JButton undoButton;
 	private JButton resetButton;
-	private MancalaModel model;
+	private MancalaModel mancalaModel;
 	private MancalaGame game;
 	
 	/**
 	 * Constructor.
 	 * @param g the game this panel is for
-	 * @param m the model this panel is attached to
+	 * @param m the mancalaModel this panel is attached to
 	 */
 	public TopPanel(MancalaGame g, MancalaModel m)
 	{
-		model = m;
+		mancalaModel = m;
 		game = g;
 		statusText = new JTextField(55);
 		statusText.setEditable(false);
 		undoButton = new JButton("Undo");
+		JButton musicButton = new JButton("Music");
 		resetButton = new JButton("Reset");
 		this.setLayout(new FlowLayout());
 		undoButton.addMouseListener(new MouseAdapter()
 				{
 					public void mousePressed(MouseEvent e)
 					{
-						model.undo();
+						mancalaModel.undo();
+					}
+				});
+		musicButton.addMouseListener(new MouseAdapter()
+				{
+					public void mousePressed(MouseEvent e)
+					{
+						mancalaModel.music();
 					}
 				});
 		undoButton.setEnabled(false);
@@ -61,6 +69,7 @@ public class TopPanel extends JPanel implements ChangeListener
 		add(statusText);
 		add(undoButton);
 		add(resetButton);
+		add(musicButton);;
 	}
 	
 	/**
@@ -68,12 +77,12 @@ public class TopPanel extends JPanel implements ChangeListener
 	 */
 	public void stateChanged(ChangeEvent arg0) 
 	{
-		if (model.canUndo())
+		if (mancalaModel.canUndo())
 			this.undoButton.setEnabled(true);
 		else
 			this.undoButton.setEnabled(false);
 		
-		String text = "Player " + Character.toUpperCase(model.getCurrPlayer()) + "'s Turn | " + model.getUndoCount() + " Undos Remain";
+		String text = "Player " + Character.toUpperCase(mancalaModel.getCurrPlayer()) + "'s Turn | " + mancalaModel.getUndoCount() + " Undos Remain";
 		statusText.setText(text);
 	}
 }

@@ -1,6 +1,6 @@
 package Model;
 /**
- * File name: Model.SimpleAudioPlayer.java
+ * File name: MancalaModel.SimpleAudioPlayer.java
  * Short description:
  * IST 242 Assignment:
  *
@@ -51,7 +51,7 @@ public class SimpleAudioPlayer
         {
             //filePath = "Your path for the file";
             filePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
-            SimpleAudioPlayer audioPlayer =
+            var audioPlayer =
                     new SimpleAudioPlayer();
 
             audioPlayer.play();

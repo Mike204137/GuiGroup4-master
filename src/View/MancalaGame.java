@@ -15,14 +15,14 @@ import javax.swing.*;
 
 public class MancalaGame extends JFrame
 {
-	private MancalaModel model;
+	private MancalaModel mancalaModel;
 	private GameBoard board;
 	private CenterPanel cPanel;
 	
-	public static void main(String [] args)
-	{
-		MancalaGame m = new MancalaGame();
-	}
+	//public static void main(String [] args)
+
+	public MancalaGame m = new MancalaGame();
+	//
 	
 	/**
 	 * Constructor for View.MancalaGame.
@@ -34,7 +34,7 @@ public class MancalaGame extends JFrame
 
 
 	/**
-	 * Initializes the game by creating the model and views and attaching
+	 * Initializes the game by creating the mancalaModel and views and attaching
 	 * them.
 	 */
 	public void initGame()
@@ -61,7 +61,7 @@ public class MancalaGame extends JFrame
 
 
 		String initPits = JOptionPane.showInputDialog("Welcome to Mancala Group 4: Please Enter 4 Stones", "4");
-		model = new MancalaModel(Integer.parseInt(initPits));
+		mancalaModel = new MancalaModel(Integer.parseInt(initPits));
 		int opt = JOptionPane.showOptionDialog(null, "Board Style is by Default Rectangular:", "Board Style", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Rectangle", "Elliptical" }, 0);
 
 		//int opt = JOptionPane.showOptionDialog(null, "Board Style is by Default Rectangular:", "Board Style", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new String[] { "Rectangle" }, 0);
@@ -71,13 +71,13 @@ public class MancalaGame extends JFrame
 		switch (opt)
 		{
 		case 0:
-			board = new GameBoard(this, model, new RectangleFormat());
+			board = new GameBoard(this, mancalaModel, new RectangleFormat());
 			break;
 		case 1:
-			board = new GameBoard(this, model, new EllipseFormat());
+			board = new GameBoard(this, mancalaModel, new EllipseFormat());
 			break;
 		default:
-			board = new GameBoard(this, model, new RectangleFormat());
+			board = new GameBoard(this, mancalaModel, new RectangleFormat());
 		}
 	}
 	

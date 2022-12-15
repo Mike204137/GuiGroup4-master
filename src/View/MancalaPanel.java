@@ -1,7 +1,8 @@
 package View;
 
-import Model.MancalaModel;
 import Model.BoardFormatter;
+import Model.MancalaModel;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -9,8 +10,8 @@ import java.awt.*;
 
 /**
 	COPYRIGHT (C). All Rights Reserved.
-	@author Jonathan Sagabaen
-	@version 1.00
+	@author Jonathan Sagabaen modified by Peter Bachman
+	@version 1.01
 	Class representing a mancala display.
 */
 
@@ -24,7 +25,7 @@ public class MancalaPanel extends JPanel implements ChangeListener
 
    /**
     * Constructor.
-    * @param mancalaModel model this panel is tied to
+    * @param mancalaModel mancalaModel this panel is tied to
     * @param playerMancala player this mancala represents
     */
    public MancalaPanel(MancalaModel mancalaModel, char playerMancala)
@@ -33,7 +34,9 @@ public class MancalaPanel extends JPanel implements ChangeListener
       this.playerMancala = playerMancala;
       
       stoneAmount = mancalaModel.getMancalaValue(playerMancala);
-      stoneAmount = 4;
+      //stoneAmount = 4;
+      stoneAmount =0; //for testing to see if works to remove stones appearing in mancala pits initially
+
 
    }
 
@@ -63,7 +66,7 @@ public class MancalaPanel extends JPanel implements ChangeListener
    }
    
    /**
-    * Update panel based on model.
+    * Update panel based on mancalaModel.
     */
    public void stateChanged(ChangeEvent e)
    {
