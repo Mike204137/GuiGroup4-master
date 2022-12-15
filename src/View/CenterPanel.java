@@ -21,7 +21,8 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
     boolean playCompleted;
 
     void play(String audioFilePath) {
-        File audioFile = new File("Audio/Majestic-Middle-Eastern-Desert-splash16.wav");
+        //File audioFile = new File("Audio/Majestic-Middle-Eastern-Desert-splash16.wav");
+        File audioFile = new File(audioFilePath);
 
         try {
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
@@ -76,11 +77,11 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
 
     }
 
-    //public static void main(String[] args)
+    public static void main(String[] args)
     {
        String audioFilePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
         Model.Music player = new Model.Music();
-        player.play(audioFilePath);
+        player.play();
     }
 
     public void paint(Graphics g) {

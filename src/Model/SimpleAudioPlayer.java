@@ -14,8 +14,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
-public class SimpleAudioPlayer
-{
+public class SimpleAudioPlayer {
+    private static String filePath;
+
+    public static void main(String[] args) {
+
+    }
 
     // to store current position
     Long currentFrame;
@@ -25,7 +29,7 @@ public class SimpleAudioPlayer
     String status;
 
     AudioInputStream audioInputStream;
-    static String filePath;
+
 
     // constructor to initialize streams and clip
     public SimpleAudioPlayer()
@@ -34,7 +38,7 @@ public class SimpleAudioPlayer
     {
         // create AudioInputStream object
         audioInputStream =
-                AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
+                AudioSystem.getAudioInputStream(new File("Audio/Majestic-Middle-Eastern-Desert-splash16.wav").getAbsoluteFile());
 
         // create clip reference
         clip = AudioSystem.getClip();
@@ -50,7 +54,7 @@ public class SimpleAudioPlayer
         try
         {
             //filePath = "Your path for the file";
-            filePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
+            String filePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
             var audioPlayer =
                     new SimpleAudioPlayer();
 
@@ -199,7 +203,7 @@ public class SimpleAudioPlayer
             LineUnavailableException
     {
         audioInputStream = AudioSystem.getAudioInputStream(
-                new File(filePath).getAbsoluteFile());
+                new File("Audio/Majestic-Middle-Eastern-Desert-splash16.wav").getAbsoluteFile());
         clip.open(audioInputStream);
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
@@ -229,6 +233,7 @@ public class SimpleAudioPlayer
     }
 
     public static String getFilePath() {
+        String filePath = "Audio/Majestic-Middle-Eastern-Desert-splash16.wav";
         return filePath;
     }
 
