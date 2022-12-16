@@ -143,7 +143,7 @@ public class RulesPlayers {
                             try {
                                 SimpleAudioPlayer audioPlayer =
                                         new SimpleAudioPlayer();
-                                Music.play();
+       //                         Music.play();
                             } catch (UnsupportedAudioFileException unsupportedAudioFileException) {
                                 unsupportedAudioFileException.printStackTrace();
                             } catch (IOException ioException) {

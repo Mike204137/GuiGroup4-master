@@ -6,13 +6,15 @@ import java.awt.*;
 public class InitialPanel extends JPanel {
     // Instance Variables -- define your private data
     private CenterPanel cp;
-
+    //private MusicPanel mp;
 
     // Constructors
     public InitialPanel() {
         // initialize default values
         super();
         setLayout(new BorderLayout());
+        //mp = new MusicPanel();
+        //add(mp, "Music");
         cp = new CenterPanel();
         add(cp, "Center");
     }
@@ -23,6 +25,4 @@ public class InitialPanel extends JPanel {
     public CenterPanel getCp() {
         return cp;
     }
-
-
 }

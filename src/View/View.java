@@ -24,7 +24,6 @@ public class View {
 
     }
 
-
     public InitialPanel getiPanel() {
         return iPanel;
     }

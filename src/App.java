@@ -2,7 +2,7 @@ import Controller.Controller;
 import Model.Model;
 import View.View;
 
-    public class App
+public class App
     {
 
         /**
@@ -15,6 +15,5 @@ import View.View;
             Controller controller = new Controller(view, model);
         }
 
-
-    }
+}
 

@@ -18,6 +18,8 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
     JButton b1;
     JLabel message;
 
+
+
     boolean playCompleted;
 
     void play(String audioFilePath) {
@@ -84,6 +86,8 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
         player.play();
     }
 
+
+
     public void paint(Graphics g) {
         Toolkit t = Toolkit.getDefaultToolkit();
 
@@ -98,6 +102,7 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
         g.drawImage(w, 400, 100, 130, 260, this);
 
     }
+
 
 
     public CenterPanel() {
