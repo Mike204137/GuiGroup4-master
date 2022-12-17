@@ -1,9 +1,10 @@
 package Controller;
 
-import Model.MancalaModel;
 import Model.Model;
 
+import javax.swing.*;
 import javax.swing.text.View;
+import java.awt.*;
 
 /**
  * File name: Controller.java
@@ -15,32 +16,37 @@ import javax.swing.text.View;
  */
 
 public class Controller {
-    // Instance Variables -- define your private data
-
-
     Model model;
     View view;
 
-
-    // Constructors
-
-    public Controller(View v, Model m) {
+    public void Controller(View v, Model m) {
         this.model = m;
         this.view = v;
 
 
-
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(600, 400));
+        frame.pack();
+        frame.setVisible(true);
     }
 
 
-    public Controller(View view, MancalaModel mancalaModel) {
+
+
+
+
+
+    public void setModel(Model model) {
+        this.model = model;
+        this.view = view;
+
     }
 
-
-
-    public Controller(Object view, Model model) {
-
-    }
 }
+
+
+
+
 
 

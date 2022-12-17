@@ -102,4 +102,6 @@ public class Music implements LineListener {
 		player.play(audioFilePath);
 	}
 
+	public void stop() {
+	setPlayCompleted(true);	}
 }

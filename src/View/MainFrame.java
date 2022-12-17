@@ -1,12 +1,25 @@
 package View;
 
 import javax.swing.*;
-
+import java.awt.*;
 
 
 public class MainFrame extends JFrame {
 
-    private InitialPanel ip;
+    @Override
+    public void update(Graphics g) {
+        super.update(g);
+    }
+
+    InitialPanel ip;
+
+    public MainFrame(InitialPanel ip) throws HeadlessException {
+        this.ip = ip;
+    }
+
+    public void setIp(InitialPanel ip) {
+        this.ip = ip;
+    }
 
     public MainFrame() {
         //Constructors

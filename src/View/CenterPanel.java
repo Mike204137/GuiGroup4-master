@@ -91,7 +91,7 @@ public class CenterPanel extends JPanel implements LineListener, ActionListener 
     public void paint(Graphics g) {
         Toolkit t = Toolkit.getDefaultToolkit();
 
-        Image i = t.getImage("Images/mancalaspashpage.png");
+        Image i = t.getImage("Images/mancalasplashpage.png");
         g.drawImage(i, 0, 0, this);
 
 

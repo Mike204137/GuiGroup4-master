@@ -129,4 +129,8 @@ public class RectangleFormat implements BoardFormatter
    {
 	   return Color.BLUE;
    }
+
+
+
 }
+

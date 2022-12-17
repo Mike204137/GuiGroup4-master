@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class InitialPanel extends JPanel {
     // Instance Variables -- define your private data
-    private CenterPanel cp;
+    public  CenterPanel cp;
     //private MusicPanel mp;
 
     // Constructors

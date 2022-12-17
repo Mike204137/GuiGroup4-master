@@ -1,6 +1,8 @@
 package View;
 
+import Model.MancalaGame;
 import Model.MancalaModel;
+import Model.Music;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -66,6 +68,19 @@ public class TopPanel extends JPanel implements ChangeListener
 						}		
 					}
 				});
+
+		musicButton.addMouseListener(new MouseAdapter()
+		{
+			public void mousePressed(MouseEvent e)
+			{
+				int option = JOptionPane.showConfirmDialog(null, "Are you sure you want to stop the music?", "Stop or Change Music", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				if (option == JOptionPane.YES_OPTION)
+				{
+					Music.play(); //stop music method here not implemented
+				}
+			}
+		});
+
 		add(statusText);
 		add(undoButton);
 		add(resetButton);

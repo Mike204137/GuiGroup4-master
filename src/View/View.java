@@ -1,42 +1,23 @@
 package View;
+import java.awt.Dimension;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 
-import java.awt.event.ActionEvent;
+//public class View<MainFrame> {
+public class View extends JPanel {
 
-public class View {
+    private JLabel label;
+    private JPanel panel;
 
-
-    /**
-     * Constructs a new object.
-     */
-    // Instance Variables -- define your private data
-    private MainFrame mf;
-    private InitialPanel iPanel;
-    private CenterPanel cPanel;
-
-    // Constructors
     public View() {
-        // initialize default values
-        mf = new MainFrame();
-        // initialize our view panels
-        iPanel = mf.getIp();
-        cPanel = mf.getIp().getCp();
 
+
+        this.panel = new JPanel();
+        panel.add(label);
+        add(panel);
+        setPreferredSize(new Dimension(600, 400));
     }
-
-    public InitialPanel getiPanel() {
-        return iPanel;
-    }
-
-    public CenterPanel getcPanel() {
-        return cPanel;
-    }
-
-
-    // --Commented out by Inspection START (12/12/2022 6:55 PM):
-//    public void actionPerformed(ActionEvent e) {
-//        // TODO Auto-generated method stub
-//
-//    }
-// --Commented out by Inspection STOP (12/12/2022 6:55 PM)
 }
+

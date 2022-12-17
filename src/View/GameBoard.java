@@ -1,6 +1,7 @@
 package View;
 
 import Model.BoardFormatter;
+import Model.MancalaGame;
 import Model.MancalaModel;
 
 import javax.swing.*;
@@ -119,7 +120,7 @@ public class GameBoard extends JFrame implements ChangeListener
 			if (winner != 'c')
 			{
 				repaint();
-				game.endGame(winner);
+				//game.endGame(winner);
 			}
 			else
 				winCheck = false;
