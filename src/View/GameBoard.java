@@ -107,6 +107,11 @@ public class GameBoard extends JFrame implements ChangeListener
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public GameBoard(MancalaModel mancalaModel) {
+
+
+    }
+
     /**
     * Controller that causes a repaint and checks to see if there is a winner.
     */

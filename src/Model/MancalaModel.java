@@ -55,6 +55,10 @@ public class MancalaModel {
         listeners = new ArrayList<ChangeListener>();
     }
 
+    public MancalaModel() {
+        this(4);
+    }
+
     /**
      * Get the number of stones in a pit.
      *
@@ -367,4 +371,9 @@ public class MancalaModel {
 
     public void music() {
     }
+
+    public void startGame() {
+    }
+
+
 }

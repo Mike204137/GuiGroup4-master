@@ -33,7 +33,8 @@ public class Model extends JFrame {
         add(SplashPanel);
         // Set the frame properties
         setTitle("Mancala Gui Group4");
-        setSize(1000, 1000);
+        setSize(800, 600);
+
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
