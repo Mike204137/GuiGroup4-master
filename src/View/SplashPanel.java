@@ -1,7 +1,11 @@
 package View;
 
+import Model.MancalaGame;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * File name: View.SplashPanel.java
@@ -17,6 +21,10 @@ public class SplashPanel extends JPanel {
     JPanel panel = new JPanel();
     JFrame frame = new JFrame();
     JButton button = new JButton("Start Game");
+
+
+    MancalaGame m = new MancalaGame();
+
 
     // Constructors
     public SplashPanel() {
